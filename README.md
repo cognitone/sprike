@@ -2,7 +2,7 @@
 
 ## Virtual Analog Synthesizer
 
-Sprike is an extended version of Tunefish4, originally created by [Brain Control](http://tunefish-synth.com) ([GitHub](https://github.com/paynebc/tunefish)), with modifications and enhancements added by [Cognitone](http://www.cognione.com). While the actual sound synthesis was not changed (in fact, you can import your existing Tunefish4 presets), Sprike features a completely re-organized preset storage and a more complete MIDI implementation, in order to best integrate with MIDI software and operating system conventions. 
+Sprike is an extended version of Tunefish4, originally created by [Brain Control](http://tunefish-synth.com) ([https://github.com/paynebc/tunefish](https://github.com/paynebc/tunefish)), with modifications and enhancements added by Cognitone. While the actual sound synthesis was not changed (in fact, you can import your existing Tunefish4 presets), Sprike features a completely re-organized preset storage and a more complete MIDI implementation, in order to best integrate with MIDI software and operating system conventions. 
 
 We chose a new name and ID for Sprike, so it can coexist with Tunefish installations out there (versions 4, 3 and 2). In addition, we changed the look and feel, so users won't confuse it with Tunefish4.
 
@@ -10,7 +10,7 @@ IMPORTANT: If you want to fork this project, please change the plugin name, bund
 
 ## Screenshot
 
-![Screenshot](https://github.com/cognitone/sprike/media/screenshot.jpg)
+![Screenshot](https://github.com/cognitone/sprike/blob/master/media/screenshot.jpg)
 
 ## Changes And Enhancements
 
@@ -66,7 +66,7 @@ Get [Juce](https://www.juce.com) version 4 or later and use Projucer to create p
 
 ## Download
 
-This repository includes source code only. You can download ready-to-use compiled plug-ins with installers for Windows and Mac (VST, VST3 and AudioUnits) from the Cognitone [website](http://www.cognitone.com/get/sprike).
+This repository includes source code only. You can download ready-to-use compiled plug-ins with installers for Windows and Mac (VST, VST3 and AudioUnits) from the Cognitone site: [http://www.cognitone.com/get/sprike](http://www.cognitone.com/get/sprike).
 
 ## Support The Author
 
