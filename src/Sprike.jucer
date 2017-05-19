@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="p6kSvv" name="Sprike" projectType="audioplug" version="1.0.0"
+              bundleIdentifier="com.cognitone.sprike" includeBinaryInAppConfig="0"
+              buildVST="1" buildVST3="1" buildAU="1" buildAUv3="0" buildRTAS="0"
+              buildAAX="0" pluginName="Sprike" pluginDesc="Cognitone Edition of Sprike4"
+              pluginManufacturer="Cognitone" pluginManufacturerCode="CGN6"
+              pluginCode="Sprk" pluginChannelConfigs="{2,2}" pluginIsSynth="1"
+              pluginWantsMidiIn="1" pluginProducesMidiOut="0" pluginIsMidiEffectPlugin="0"
+              pluginEditorRequiresKeys="0" pluginAUExportPrefix="CognitoneSprikeAU"
+              pluginRTASCategory="" aaxIdentifier="com.cognitone.sprike.aax"
+              pluginAAXCategory="AAX_ePlugInCategory_Dynamics" jucerVersion="5.0.0"
+              companyName="Cognitone" companyEmail="support@cognitone.com"
+              companyWebsite="www.cognitone.com" displaySplashScreen="0" reportAppUsage="0"
+              splashScreenColour="Dark" buildStandalone="0" enableIAA="0">
+  <MAINGROUP id="fZpnw6" name="Sprike">
+    <GROUP id="{AF3439AE-897D-B392-D591-E7A2B1C85A9B}" name="Source">
+      <FILE id="NkU21N" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="v4HZkV" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="JfgCDf" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="SWITrB" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+    </GROUP>
+    <GROUP id="{D24A902B-C4B4-4BEF-9A4D-CAD82738DF47}" name="runtime">
+      <FILE id="bg6pXp" name="array.cpp" compile="1" resource="0" file="Source/runtime/array.cpp"/>
+      <FILE id="Ty2Xy7" name="array.hpp" compile="0" resource="0" file="Source/runtime/array.hpp"/>
+      <FILE id="x2LJi0" name="random.cpp" compile="1" resource="0" file="Source/runtime/random.cpp"/>
+      <FILE id="pQzTZI" name="random.hpp" compile="0" resource="0" file="Source/runtime/random.hpp"/>
+      <FILE id="DuzF42" name="runtime.cpp" compile="1" resource="0" file="Source/runtime/runtime.cpp"/>
+      <FILE id="QdwZhD" name="runtime.hpp" compile="0" resource="0" file="Source/runtime/runtime.hpp"/>
+      <FILE id="Csmx2m" name="simd.cpp" compile="1" resource="0" file="Source/runtime/simd.cpp"/>
+      <FILE id="BXq75h" name="simd.hpp" compile="0" resource="0" file="Source/runtime/simd.hpp"/>
+      <FILE id="Xbjspb" name="system.hpp" compile="0" resource="0" file="Source/runtime/system.hpp"/>
+      <FILE id="uSoWm5" name="types.hpp" compile="0" resource="0" file="Source/runtime/types.hpp"/>
+    </GROUP>
+    <GROUP id="{E52D1356-F83C-4007-D260-D9CD4832B2E3}" name="synth">
+      <FILE id="RXer0R" name="tf4.cpp" compile="1" resource="0" file="Source/synth/tf4.cpp"/>
+      <FILE id="BCVWsM" name="tf4.hpp" compile="0" resource="0" file="Source/synth/tf4.hpp"/>
+      <FILE id="hGwDvG" name="tf4fx.cpp" compile="1" resource="0" file="Source/synth/tf4fx.cpp"/>
+      <FILE id="p8ufuj" name="tf4fx.hpp" compile="0" resource="0" file="Source/synth/tf4fx.hpp"/>
+    </GROUP>
+    <FILE id="ChaJjt" name="tfextensions.h" compile="0" resource="0" file="Source/tfextensions.h"/>
+    <FILE id="r5t8sy" name="tflookandfeel.cpp" compile="1" resource="0"
+          file="Source/tflookandfeel.cpp"/>
+    <FILE id="tm0SfA" name="tflookandfeel.h" compile="0" resource="0" file="Source/tflookandfeel.h"/>
+    <FILE id="O9CPIo" name="tfsynthprogram.cpp" compile="1" resource="0"
+          file="Source/tfsynthprogram.cpp"/>
+    <FILE id="WR0iqq" name="tfsynthprogram.hpp" compile="0" resource="0"
+          file="Source/tfsynthprogram.hpp"/>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0"/>
+  </MODULES>
+  <JUCEOPTIONS JUCE_QUICKTIME="disabled" JUCE_ASIO="disabled" JUCE_WASAPI="disabled"
+               JUCE_WASAPI_EXCLUSIVE="disabled" JUCE_DIRECTSOUND="disabled"
+               JUCE_ALSA="disabled" JUCE_JACK="disabled" JUCE_USE_ANDROID_OPENSLES="disabled"
+               JUCE_USE_FLAC="disabled" JUCE_USE_OGGVORBIS="disabled" JUCE_USE_MP3AUDIOFORMAT="disabled"
+               JUCE_USE_LAME_AUDIO_FORMAT="disabled" JUCE_USE_WINDOWS_MEDIA_FORMAT="disabled"
+               JUCE_PLUGINHOST_VST="disabled" JUCE_PLUGINHOST_VST3="disabled"
+               JUCE_PLUGINHOST_AU="disabled" JUCE_USE_CDREADER="disabled" JUCE_USE_CDBURNER="disabled"/>
+  <LIVE_SETTINGS>
+    <OSX/>
+  </LIVE_SETTINGS>
+</JUCERPROJECT>
