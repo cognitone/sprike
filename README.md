@@ -2,7 +2,7 @@
 
 ## Virtual Analog Synthesizer
 
-Sprike is an extended version of Tunefish4, originally created by [Brain Control](http://tunefish-synth.com) ([https://github.com/paynebc/tunefish](https://github.com/paynebc/tunefish)), with modifications and enhancements added by Cognitone. While the actual sound synthesis was not changed (in fact, you can import your existing Tunefish4 presets), Sprike features a completely re-organized preset storage and a more complete MIDI implementation, in order to best integrate with MIDI software and operating system conventions. 
+Sprike is an extended version of Tunefish4, originally created by [Brain Control](http://tunefish-synth.com) ([https://github.com/paynebc/tunefish](https://github.com/paynebc/tunefish)), with modifications and enhancements added by Cognitone. While the actual sound synthesis was not changed (in fact, you can import your existing Tunefish4 presets), Sprike features a differently organized preset storage, 4 additional MOD sources, an on-screen keyboard, a level meter, tempo-controlled delay units, and a more complete MIDI implementation with bank plus program selection, in order to integrate more transparently with MIDI-controlled environments and conventions. 
 
 We chose a new name and ID for Sprike, so it can coexist with Tunefish installations out there (versions 4, 3 and 2). In addition, we changed the look and feel, so users won't confuse it with Tunefish4.
 
