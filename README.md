@@ -62,7 +62,7 @@ If you edit and save a factory preset, it will not be overwritten, but stored in
 
 ## How To Compile
 
-Get [Juce](https://www.juce.com) version 4 or later and use Projucer to create project exporters for Windows or Mac. Please refer to the original [Tunefish4](https://github.com/paynebc/tunefish) project for instructions on how to compile for Linux. Possibly Projucer will take care of that already.
+Get [Juce](https://www.juce.com) version 5 or later and use Projucer to create project exporters for Windows or Mac. Please refer to the original [Tunefish4](https://github.com/paynebc/tunefish) project for instructions on how to compile for Linux. Possibly Projucer will take care of that already.
 
 ## Download
 

@@ -212,7 +212,7 @@ void eTfFreqView::paint (Graphics& g)
 String PluginEditor::explodeString (const String& str)
 {
     String out;
-    int n = str.getNumBytesAsUTF8();
+    size_t n = str.getNumBytesAsUTF8();
     for (int i = 0; i < n; ++i)
     {
         out << str.substring(i, i+1);
@@ -654,7 +654,7 @@ void PluginEditor::_addComboBox(Component *parent, ComboBox &combobox, String it
     parent->addChildComponent(&combobox);
 
     StringArray itemArray;
-    itemArray.addTokens(items, "|", String::empty);
+    itemArray.addTokens(items, "|", "");
 
     combobox.setVisible(true);
     combobox.addListener(this);
@@ -1461,6 +1461,7 @@ void PluginEditor::_configSetWaveformsMoving(bool value)
  *      AboutComponent
  **************************************************************************************/
 
+#define BUILD_YEAR  (__DATE__ + 7)
 
 AboutComponent::AboutComponent () :
     link1 ("cognitone.com", URL("http://www.cognitone.com")),
@@ -1478,7 +1479,7 @@ AboutComponent::AboutComponent () :
     
     
     text2.setJustification (Justification::centred);
-    text2.append (String::fromUTF8("© 2014 Brain Control, © 2017 Cognitone"),
+    text2.append (String::fromUTF8("© 2014 Brain Control, © ") + String(BUILD_YEAR) + String(" Cognitone"),
                   Fonts::getInstance()->normal(),
                   Colours::black);
     

@@ -40,7 +40,8 @@
 namespace ProjectInfo
 {
     const char* const  projectName    = "Sprike";
-    const char* const  versionString  = "1.0.0";
-    const int          versionNumber  = 0x10000;
+    const char* const  companyName    = "Cognitone";
+    const char* const  versionString  = "1.4.2";
+    const int          versionNumber  = 0x10402;
 }
 #endif

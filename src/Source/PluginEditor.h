@@ -74,9 +74,9 @@ private:
 
 class PluginEditor  :
     public AudioProcessorEditor,
-    public SliderListener,
-    public ComboBoxListener,
-    public ButtonListener,
+    public Slider::Listener,
+    public ComboBox::Listener,
+    public Button::Listener,
     public Timer
 {
 public:

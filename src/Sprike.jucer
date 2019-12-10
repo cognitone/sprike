@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="p6kSvv" name="Sprike" projectType="audioplug" version="1.0.0"
+<JUCERPROJECT id="p6kSvv" name="Sprike" projectType="audioplug" version="1.4.2"
               bundleIdentifier="com.cognitone.sprike" includeBinaryInAppConfig="0"
               buildVST="1" buildVST3="1" buildAU="1" buildAUv3="0" buildRTAS="0"
-              buildAAX="0" pluginName="Sprike" pluginDesc="Cognitone Edition of Sprike4"
+              buildAAX="0" pluginName="Sprike" pluginDesc="Cognitone Edition of Tunefish4"
               pluginManufacturer="Cognitone" pluginManufacturerCode="CGN6"
               pluginCode="Sprk" pluginChannelConfigs="{2,2}" pluginIsSynth="1"
               pluginWantsMidiIn="1" pluginProducesMidiOut="0" pluginIsMidiEffectPlugin="0"
               pluginEditorRequiresKeys="0" pluginAUExportPrefix="CognitoneSprikeAU"
               pluginRTASCategory="" aaxIdentifier="com.cognitone.sprike.aax"
-              pluginAAXCategory="AAX_ePlugInCategory_Dynamics" jucerVersion="5.0.0"
-              companyName="Cognitone" companyEmail=""
-              companyWebsite="www.cognitone.com" displaySplashScreen="0" reportAppUsage="0"
-              splashScreenColour="Dark" buildStandalone="0" enableIAA="0">
+              pluginAAXCategory="2" jucerVersion="5.4.4" companyName="Cognitone"
+              companyEmail="support@cognitone.com" companyWebsite="www.cognitone.com"
+              displaySplashScreen="0" reportAppUsage="0" splashScreenColour="Dark"
+              buildStandalone="1" enableIAA="0" companyCopyright="Cognitone"
+              pluginFormats="buildVST,buildVST3,buildAU,buildStandalone" pluginCharacteristicsValue="pluginIsSynth,pluginWantsMidiIn">
   <MAINGROUP id="fZpnw6" name="Sprike">
+    <GROUP id="{3091D7FF-6F0A-B3F6-A8DF-FEC72462119D}" name="Artwork">
+      <FILE id="v10rEG" name="sprike.png" compile="0" resource="0" file="Artwork/sprike.png"/>
+    </GROUP>
     <GROUP id="{AF3439AE-897D-B392-D591-E7A2B1C85A9B}" name="Source">
       <FILE id="NkU21N" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
@@ -51,6 +55,67 @@
           file="Source/tfsynthprogram.hpp"/>
   </MAINGROUP>
   <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX" keepCustomXcodeSchemes="1" smallIcon="v10rEG"
+               bigIcon="v10rEG">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="Sprike"
+                       osxCompatibility="10.9 SDK" osxArchitecture="64BitIntel" xcodeVstBinaryLocation="/Library/Audio/Plug-Ins/VST"
+                       xcodeVst3BinaryLocation="/Library/Audio/Plug-Ins/VST3" xcodeAudioUnitBinaryLocation="/Library/Audio/Plug-Ins/Components"
+                       enablePluginBinaryCopyStep="1" vstBinaryLocation="/Library/Audio/Plug-Ins/VST"
+                       vst3BinaryLocation="/Library/Audio/Plug-Ins/VST3" auBinaryLocation="/Library/Audio/Plug-Ins/Components"/>
+        <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="Sprike"
+                       osxCompatibility="10.9 SDK" osxArchitecture="64BitIntel" xcodeVstBinaryLocation="/Library/Audio/Plug-Ins/VST"
+                       xcodeVst3BinaryLocation="/Library/Audio/Plug-Ins/VST3" xcodeAudioUnitBinaryLocation="/Library/Audio/Plug-Ins/Components"
+                       enablePluginBinaryCopyStep="1" vstBinaryLocation="/Library/Audio/Plug-Ins/VST"
+                       vst3BinaryLocation="/Library/Audio/Plug-Ins/VST3" auBinaryLocation="/Library/Audio/Plug-Ins/Components"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../../juce/modules"/>
+        <MODULEPATH id="juce_events" path="../../juce/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../juce/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../juce/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../juce/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../juce/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../../juce/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="../../juce/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../juce/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../juce/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../juce/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../juce/modules"/>
+        <MODULEPATH id="juce_opengl" path="../../juce/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../juce/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+    <VS2015 targetFolder="Builds/VisualStudio2015" extraCompilerFlags="/wd4996 /wd4244 /wd4355"
+            windowsTargetPlatformVersion="8.1"
+            smallIcon="v10rEG" bigIcon="v10rEG">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="2" generateManifest="1" winArchitecture="x64"
+                       isDebug="1" optimisation="1" targetName="Sprike" 
+                       debugInformationFormat="ProgramDatabase" enablePluginBinaryCopyStep="0"
+                       useRuntimeLibDLL="0"/>
+        <CONFIGURATION name="Release" winWarningLevel="2" generateManifest="1" winArchitecture="x64"
+                       isDebug="0" optimisation="3" targetName="Sprike"                        
+                       debugInformationFormat="ProgramDatabase" enablePluginBinaryCopyStep="0"
+                       linkTimeOptimisation="1" useRuntimeLibDLL="0"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_opengl" path="../../juce/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../juce/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../juce/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../juce/modules"/>
+        <MODULEPATH id="juce_events" path="../../juce/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../juce/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../../juce/modules"/>
+        <MODULEPATH id="juce_core" path="../../juce/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../juce/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../juce/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../juce/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../juce/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="../../juce/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../juce/modules"/>
+      </MODULEPATHS>
+    </VS2015>
   </EXPORTFORMATS>
   <MODULES>
     <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0"/>
@@ -68,13 +133,12 @@
     <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0"/>
     <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0"/>
   </MODULES>
-  <JUCEOPTIONS JUCE_QUICKTIME="disabled" JUCE_ASIO="disabled" JUCE_WASAPI="disabled"
-               JUCE_WASAPI_EXCLUSIVE="disabled" JUCE_DIRECTSOUND="disabled"
-               JUCE_ALSA="disabled" JUCE_JACK="disabled" JUCE_USE_ANDROID_OPENSLES="disabled"
-               JUCE_USE_FLAC="disabled" JUCE_USE_OGGVORBIS="disabled" JUCE_USE_MP3AUDIOFORMAT="disabled"
-               JUCE_USE_LAME_AUDIO_FORMAT="disabled" JUCE_USE_WINDOWS_MEDIA_FORMAT="disabled"
-               JUCE_PLUGINHOST_VST="disabled" JUCE_PLUGINHOST_VST3="disabled"
-               JUCE_PLUGINHOST_AU="disabled" JUCE_USE_CDREADER="disabled" JUCE_USE_CDBURNER="disabled"/>
+  <JUCEOPTIONS JUCE_QUICKTIME="disabled" JUCE_ASIO="1" JUCE_WASAPI="1" JUCE_WASAPI_EXCLUSIVE="1"
+               JUCE_DIRECTSOUND="1" JUCE_ALSA="0" JUCE_JACK="0" JUCE_USE_ANDROID_OPENSLES="0"
+               JUCE_USE_FLAC="0" JUCE_USE_OGGVORBIS="0" JUCE_USE_MP3AUDIOFORMAT="0"
+               JUCE_USE_LAME_AUDIO_FORMAT="0" JUCE_USE_WINDOWS_MEDIA_FORMAT="0"
+               JUCE_PLUGINHOST_VST="0" JUCE_PLUGINHOST_VST3="0" JUCE_PLUGINHOST_AU="0"
+               JUCE_USE_CDREADER="0" JUCE_USE_CDBURNER="0"/>
   <LIVE_SETTINGS>
     <OSX/>
   </LIVE_SETTINGS>

@@ -45,7 +45,7 @@ void eRandom::seed(eU32 newSeed)
 
 void eRandom::seedRandomly()
 {
-    seed(clock());
+    seed((unsigned int)clock());
 }
 
 eU32 eRandom::nextInt()

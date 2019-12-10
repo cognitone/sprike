@@ -38,7 +38,7 @@
 static File presetsDirectory (bool factory)
 {
     String folder (JucePlugin_Manufacturer);
-    folder << File::separatorString << JucePlugin_Name;
+    folder << File::getSeparatorString() << JucePlugin_Name;
 #if JUCE_MAC
     if (factory)
         return File(String("/Library/Audio/Presets/") + folder);
@@ -234,7 +234,7 @@ const String PluginProcessor::getParameterName (int index)
 
 const String PluginProcessor::getParameterText (int index)
 {
-    return String::empty;
+    return String();
 }
 
 const String PluginProcessor::getInputChannelName (int channelIndex) const
@@ -504,9 +504,11 @@ void PluginProcessor::processEvents (MidiBuffer &midiMessages, eU32 messageOffse
         {
             eS32 bend_lsb = midiMessage.getRawData()[1] & 0x7f;
             eS32 bend_msb = midiMessage.getRawData()[2] & 0x7f;
-
-            eTfInstrumentPitchBend(*tf, ((eF32(bend_msb) / 127.0f) - 0.5f) * 2.0f,
-                                        ((eF32(bend_lsb) / 127.0f) - 0.5f) * 2.0f);
+            
+            auto semitones = ((eF32(bend_msb) / 127.0f) - 0.5f) * 2.0f;
+            auto cents = ((eF32(bend_lsb) / 127.0f) - 0.5f) * 2.0f;
+            
+            eTfInstrumentPitchBend(*tf, semitones, cents);
         }
         else if (midiMessage.isTempoMetaEvent())
         {
@@ -590,7 +592,7 @@ bool PluginProcessor::privateLoadProgram (eU32 index)
     // These will be renamed and moved to the new bank folders automatically
     bool imported = true;
     File file = presetsDirectory(false)
-    .getChildFile(String("tf4programs") + File::separatorString +
+    .getChildFile(String("tf4programs") + File::getSeparatorString() +
                   String("program") + String(index) + String(".txt"));
     
     if (!file.existsAsFile())
@@ -599,7 +601,7 @@ bool PluginProcessor::privateLoadProgram (eU32 index)
         // Look in new per-bank structure
         const int bank = index / 128;
         const int prog = index % 128;
-        String slot = String("bank") + String(bank) + File::separatorString
+        String slot = String("bank") + String(bank) + File::getSeparatorString()
         + String("program") + String(prog).paddedLeft('0',3) + String(".txt");
         
         // Look in user folder first, then in factory presets
@@ -630,7 +632,7 @@ bool PluginProcessor::privateLoadProgram (eU32 index)
             break;
         
         StringArray parts;
-        parts.addTokens(line, ";", String::empty);
+        parts.addTokens(line, ";", "");
         if (parts.size() == 2)
         {
             String key = parts[0];
@@ -666,7 +668,7 @@ bool PluginProcessor::privateSaveProgram (eU32 index)
     const int prog = index % 128;
     
     File file = presetsDirectory(false).getChildFile(
-        String("bank") + String(bank) + File::separatorString +
+        String("bank") + String(bank) + File::getSeparatorString() +
         String("program") + String(prog).paddedLeft('0',3) + String(".txt"));
 
     file.getParentDirectory().createDirectory();
@@ -680,15 +682,15 @@ bool PluginProcessor::privateSaveProgram (eU32 index)
         return false;
     }
     DBG ("Saving " << file.getFullPathName());
-    stream->writeText(programs[index].getName(), false, false);
-    stream->writeText("\r\n", false, false);
+    stream->writeText(programs[index].getName(), false, false, nullptr);
+    stream->writeText("\r\n", false, false, nullptr);
 
     for(eU32 i=0; i<TF_PARAM_COUNT; i++)
     {
-        stream->writeText(TF_NAMES[i], false, false);
-        stream->writeText(";", false, false);
-        stream->writeText(String(programs[index].getParam(i)), false, false);
-        stream->writeText("\r\n", false, false);
+        stream->writeText(TF_NAMES[i], false, false, nullptr);
+        stream->writeText(";", false, false, nullptr);
+        stream->writeText(String(programs[index].getParam(i)), false, false, nullptr);
+        stream->writeText("\r\n", false, false, nullptr);
     }
     return true;
 }
@@ -748,7 +750,7 @@ void PluginProcessor::getStateInformation (MemoryBlock& destData)
 
 void PluginProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
-    ScopedPointer<XmlElement> xmlState (getXmlFromBinary (data, sizeInBytes));
+    std::unique_ptr<XmlElement> xmlState = getXmlFromBinary (data, sizeInBytes);
 
     if (xmlState != nullptr)
     {
